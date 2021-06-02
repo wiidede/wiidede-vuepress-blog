@@ -23,8 +23,8 @@ module.exports = {
 
   bodyBgImg: [
     'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/cover.jpg'
-  ],
-  bodyBgImgOpacity: 0.8,
+  ], // body背景大图，默认无。 单张图片 String || 多张图片 Array, 多张图片时每隔15秒换一张。
+  bodyBgImgOpacity: 0.8, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
   // bodyBgImg: [
   //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
   //   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',
@@ -39,10 +39,10 @@ module.exports = {
   // ],
   // contentBgStyle: 1, // 文章内容块的背景风格，默认无. 1 => 方格 | 2 => 横线 | 3 => 竖线 | 4 => 左斜线 | 5 => 右斜线 | 6 => 点状
 
-  // updateBar: { // 最近更新栏
-  //   showToArticle: true, // 显示到文章页底部，默认true
-  //   moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
-  // },
+  updateBar: { // 最近更新栏
+    showToArticle: false, // 显示到文章页底部，默认true
+    moreArticle: '/archives' // “更多文章”跳转的页面，默认'/archives'
+  },
   // rightMenuBar: false, // 是否显示右侧文章大纲栏，默认true (屏宽小于1300px下无论如何都不显示)
   // sidebarOpen: false, // 初始状态是否打开侧边栏，默认true
   // pageButton: false, // 是否显示快捷翻页按钮，默认true
