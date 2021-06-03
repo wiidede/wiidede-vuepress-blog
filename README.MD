@@ -8,3 +8,7 @@
 ## 主题 & 快速上手
 
 [vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing)
+
+## 部署
+
+参考 VuePress 官方文档 [部署](https://vuepress.vuejs.org/zh/guide/deploy.html#github-pages)
