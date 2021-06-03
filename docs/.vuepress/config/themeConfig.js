@@ -86,7 +86,10 @@ module.exports = {
     // 页脚信息
     createYear: 2021, // 博客创建年份
     copyrightInfo:
-      'Wiidede | <a href="https://github.com/wiidede/wiidede.github.io/blob/master/LICENSE" target="_blank">MIT License</a>', // 博客版权信息，支持a标签
+      'Wiidede | <span title="all the website\'s code/theme expect for article content and logo" class="definition-content">Website</span> \
+      use <a href="https://github.com/wiidede/wiidede.github.io/blob/master/LICENSE" target="_blank">MIT License</a>\
+      | Article content & logo use <a href="https://github.com/wiidede/wiidede-hexo-blog/blob/master/LICENSE" \
+      target="_blank">CC-BY-SA-4.0 License</a>', // 博客版权信息，支持a标签
   },
   // htmlModules // 插入hmtl(广告)模块
 }
