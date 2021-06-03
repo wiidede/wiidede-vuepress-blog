@@ -1,3 +1,5 @@
+<p align="center"><a href="https://wiidede.github.io/ target="_blank" rel="noopener noreferrer"><img width="180" src="https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/dede-logo.png" alt="logo"></a></p>
+
 <h1 align="center">wiidede's blog</h1>
 
 * [博客地址](https://wiidede.github.io/)
