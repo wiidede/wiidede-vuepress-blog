@@ -4,3 +4,7 @@
 
 * [博客地址](https://wiidede.github.io/)
 * [旧博客](https://wiidede.github.io/wiidede-hexo-blog/)
+
+## 主题 & 快速上手
+
+[vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing)
