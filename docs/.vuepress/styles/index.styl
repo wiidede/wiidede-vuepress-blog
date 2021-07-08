@@ -1,4 +1,3 @@
-
 // 评论区颜色重置
 .gt-container
   .gt-ico-tip
@@ -6,60 +5,73 @@
       content: '。( Win + . ) 或 ( ⌃ + ⌘ + ␣ ) 打开表情'
       color: #999
       font-size: .8rem
+
   .gt-meta
-    border-color var(--borderColor)!important
+    border-color var(--borderColor) !important
+
   .gt-comments-null
     color var(--textColor)
     opacity .5
+
   .gt-header-textarea
     color var(--textColor)
-    background rgba(180,180,180,0.1)!important
+    background rgba(180, 180, 180, 0.1) !important
+
   .gt-btn
     border-color $accentColor!important
     background-color $accentColor!important
+
   .gt-btn-preview
-    background-color rgba(255,255,255,0)!important
+    background-color rgba(255, 255, 255, 0) !important
     color $accentColor!important
+
   a
     color $accentColor!important
+
   .gt-svg svg
     fill $accentColor!important
-  .gt-comment-content,.gt-comment-admin .gt-comment-content
-    background-color rgba(150,150,150,0.1)!important
+
+  .gt-comment-content, .gt-comment-admin .gt-comment-content
+    background-color rgba(150, 150, 150, 0.1) !important
+
     &:hover
-      box-shadow 0 0 25px rgba(150,150,150,.5)!important
+      box-shadow 0 0 25px rgba(150, 150, 150, .5) !important
+
     .gt-comment-body
-      color var(--textColor)!important
+      color var(--textColor) !important
 
 
 // qq徽章
 .qq
   position: relative;
+
 .qq::after
   content: "可撩";
   background: $accentColor;
-  color:#fff;
+  color: #fff;
   padding: 0 5px;
   border-radius: 10px;
-  font-size:12px;
+  font-size: 12px;
   position: absolute;
   top: -4px;
   right: -35px;
-  transform:scale(0.85);
+  transform: scale(0.85);
 
 // demo模块图标颜色
 body .vuepress-plugin-demo-block__wrapper
-  &,.vuepress-plugin-demo-block__display
-    border-color rgba(160,160,160,.3)
+  &, .vuepress-plugin-demo-block__display
+    border-color rgba(160, 160, 160, .3)
+
   .vuepress-plugin-demo-block__footer:hover
     .vuepress-plugin-demo-block__expand::before
       border-top-color: $accentColor !important;
       border-bottom-color: $accentColor !important;
+
     svg
       fill: $accentColor !important;
 
 body
-  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  font-family "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
 
 ::selection
   background-color #8275d6
@@ -69,36 +81,75 @@ body
 
 pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection
-  background: #fbeac7 !important;
+  background #fbeac7 !important
+
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection
-  background: #fbeac7 !important;
+  background #fbeac7 !important
 
+.card-box
+  transition all ease 3s
+  &:hover
+    background-color var(--mainBgHover)
 
 .definition-content
   cursor help
 
 #main-title
-  text-shadow: #00000080 0.1em 0.1em 0.5em
+  text-shadow #00000080 0.1em 0.1em 0.5em
 
   & + .description
-    text-shadow: #00000080 0.1em 0.1em 0.5em
+    text-shadow #00000080 0.1em 0.1em 0.5em
 
 .breadcrumbs
-  display: inline-flex !important
-  align-items: baseline
+  display inline-flex !important
+  align-items baseline
 
 .banner
-  background: #FFFFFF28
+  background #FFFFFF28
 
 .article-info
   opacity .7
 
 .iconfont
   a
-    font-family 'PingFang SC','Hiragino Sans GB','Micorosoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif
+    font-family 'PingFang SC', 'Hiragino Sans GB', 'Micorosoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
     font-weight 500
+
   &.icon-touxiang, &.icon-riqi
-    font-family 'PingFang SC','Hiragino Sans GB','Micorosoft YaHei','Helvetica Neue','Helvetica','Arial',sans-serif !important
+    cursor initial !important
+    font-family 'PingFang SC', 'Hiragino Sans GB', 'Micorosoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important
+
     &:before
       font-family 'iconfont'
+
+.pagination
+  .prev
+    transition all ease-in-out .3s
+
+    &:hover
+      transform translateX(-5px)
+      box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
+
+  .pagination-list > .card-box
+    transition all ease-in-out .3s
+
+    &:hover
+      transform translateY(-5px)
+      box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
+
+  .next
+    transition all ease-in-out .3s
+
+    &:hover
+      transform translateX(5px)
+      box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
+
+.categories-wrapper .categories
+  padding-right 0 !important
+
+  a:not(.active):hover
+    background #f96d8d40 !important
+
+.right-menu-wrapper .right-menu-content .right-menu-item:hover
+  background #f96d8d10 !important
