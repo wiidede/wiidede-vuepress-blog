@@ -61,6 +61,20 @@ body .vuepress-plugin-demo-block__wrapper
 body
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
+::selection
+  background-color #8275d6
+
+::-moz-selection
+  background-color #8275d6
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection
+  background: #fbeac7 !important;
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection
+  background: #fbeac7 !important;
+
+
 .definition-content
   cursor help
 
