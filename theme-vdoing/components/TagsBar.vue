@@ -61,7 +61,8 @@ export default {
   },
   methods: {
     getTagStyle () {
-      const tagBgColor = this.tagBgColor
+      let tagBgColor = this.$themeConfig.tagBgColor;
+      !Array.isArray(tagBgColor) && (tagBgColor = this.tagBgColor)
       const randomColor = tagBgColor[Math.floor(Math.random() * tagBgColor.length)]
       return `background: ${randomColor};--randomColor:${randomColor};`
     }
