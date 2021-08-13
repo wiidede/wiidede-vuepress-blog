@@ -79,16 +79,9 @@ body
 ::-moz-selection
   background-color #cfcaef
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection
-  background #fbeac7 !important
-
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection
-  background #fbeac7 !important
-
 .card-box
   transition all ease 3s
+
   &:hover
     background-color var(--mainBgHover)
 
@@ -103,13 +96,6 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection
 
   & + .description
     text-shadow #00000080 0.1em 0.1em 0.5em
-
-.breadcrumbs
-  display inline-flex !important
-  align-items baseline
-
-.banner
-  background #FFFFFF28
 
 .article-info
   opacity .7
@@ -127,33 +113,11 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection
       font-family 'iconfont'
 
 .pagination
-  .prev
-    transition all ease-in-out .3s
-    border-top-right-radius 5px !important
-    border-bottom-right-radius 5px !important
-    border-top-left-radius 32px !important
-    border-bottom-left-radius 32px !important
-
-    &:hover
-      transform translateX(-5px)
-      box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
-
   .pagination-list > .card-box
     transition all ease-in-out .3s
 
     &:hover
       transform translateY(-5px)
-      box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
-
-  .next
-    transition all ease-in-out .3s
-    border-top-right-radius 32px !important
-    border-bottom-right-radius 32px !important
-    border-top-left-radius 5px !important
-    border-bottom-left-radius 5px !important
-
-    &:hover
-      transform translateX(5px)
       box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
 
 .categories-wrapper .categories

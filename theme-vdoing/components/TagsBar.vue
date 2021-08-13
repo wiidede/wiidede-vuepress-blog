@@ -46,9 +46,7 @@ export default {
     }
   },
   created () {
-    for (let i = 0, tagH = this.tags.length; i < tagH; i++) {
-      this.tagStyleList.push(this.getTagStyle())
-    }
+  	this.initTagStyle();
   },
   computed: {
     tags () {
@@ -60,12 +58,15 @@ export default {
     }
   },
   methods: {
-    getTagStyle () {
-      let tagBgColor = this.$themeConfig.tagBgColor;
-      !Array.isArray(tagBgColor) && (tagBgColor = this.tagBgColor)
-      const randomColor = tagBgColor[Math.floor(Math.random() * tagBgColor.length)]
-      return `background: ${randomColor};--randomColor:${randomColor};`
-    }
+	  initTagStyle() {
+		  let tagBgColor = this.$themeConfig.tagBgColor;
+		  (!Array.isArray(tagBgColor) || !tagBgColor.length) && (tagBgColor = this.tagBgColor)
+		  this.tagStyleList = this.tags.map((tag, index) => {
+		  	index % tagBgColor.length === 0 && tagBgColor.sort(() => Math.random() - 0.5);
+			  const randomColor = tagBgColor[index % tagBgColor.length]
+			  return `background: ${randomColor};--randomColor:${randomColor};`
+		  })
+    },
   }
 }
 </script>
@@ -84,10 +85,10 @@ export default {
     padding 0.8rem 0.5rem 0.5rem 0.5rem
     margin 0 -0.5rem -0.5rem -0.5rem
     a
-      opacity 0.8
+      opacity .9
       display inline-block
       padding 0.2rem 0.4rem
-      transition all 0.4s
+      transition all 0.3s
       background-color var(--textColor)
       color var(--mainBg)
       border-radius 3px

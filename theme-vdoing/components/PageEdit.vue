@@ -146,7 +146,7 @@ export default {
       font-size 0.9em
       background-color rgba(128, 128, 128, 0.08)
       border-radius 3px
-      opacity 0.8
+      opacity .9
   .last-updated
     float right
     font-size 0.9em

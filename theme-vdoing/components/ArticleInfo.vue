@@ -175,7 +175,8 @@ export default {
       margin 0
       padding 0
       overflow hidden
-      display inline-block
+      display inline-flex
+      align-items baseline
       line-height 2rem
       @media (max-width 960px)
         width 100%
