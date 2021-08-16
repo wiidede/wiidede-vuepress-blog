@@ -10092,6 +10092,11 @@ vuepress-plugin-container@^2.0.2:
     "@vuepress/shared-utils" "^1.2.0"
     markdown-it-container "^2.0.0"
 
+vuepress-plugin-cursor-effects@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.nlark.com/vuepress-plugin-cursor-effects/download/vuepress-plugin-cursor-effects-1.0.2.tgz#88154c5f049139dec7c26fa75e45cea115d90300"
+  integrity sha1-iBVMXwSROd7Hwm+nXkXOoRXZAwA=
+
 vuepress-plugin-demo-block@^0.7.2:
   version "0.7.2"
   resolved "https://registry.nlark.com/vuepress-plugin-demo-block/download/vuepress-plugin-demo-block-0.7.2.tgz#02fc4f0ef764052981accf41f1403fdb9f794c0d"
