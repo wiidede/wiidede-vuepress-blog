@@ -12,6 +12,7 @@ module.exports = [
     ]
   },
   { text: '关于', link: '/about-me/' },
+  { text: '我的小站', link: '/little-page/' },
   {
     text: '索引',
     link: '/archives/',
