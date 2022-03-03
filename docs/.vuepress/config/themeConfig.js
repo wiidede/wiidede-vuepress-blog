@@ -21,10 +21,24 @@ module.exports = {
 	// archive: false, // 是否打开归档功能，默认true。 如打开，会做的事情有：1.自动生成归档页面（在@pages文件夹）。如关闭，则反之。
 	// categoryText: '随笔', // 碎片化文章（_posts文件夹的文章）预设生成的分类值，默认'随笔'
 
-	bodyBgImg: [
-		'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/cover.jpg'
-	], // body背景大图，默认无。 单张图片 String || 多张图片 Array, 多张图片时每隔15秒换一张。
-	bodyBgImgOpacity: 0.6, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
+	bodyBgColor: {
+		light: [
+			'linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)',
+			'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+			'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'
+		],
+		dark: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
+		read: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'
+	},
+	intervalTime: 20,
+	transitionTime: 20,
+	// 修改自定义背景方式
+	// bodyBgImg: [
+	// 	'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/cover.jpg'
+	// ], // body背景大图，默认无。 单张图片 String || 多张图片 Array, 多张图片时每隔15秒换一张。
+	bodyBgImgOpacity: 1, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
+
+
 	// bodyBgImg: [
 	//   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175828.jpeg',
 	//   'https://cdn.jsdelivr.net/gh/xugaoyi/image_store/blog/20200507175845.jpeg',

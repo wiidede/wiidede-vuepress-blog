@@ -82,7 +82,7 @@
       @toggle-theme-mode="toggleThemeMode"
     />
 
-    <BodyBgImg v-if="$themeConfig.bodyBgImg" />
+    <BodyBgImg v-if="$themeConfig.bodyBgImg || $themeConfig.bodyBgColor" />
 
     <!-- 自定义html插入左右下角的小窗口 -->
     <div class="custom-html-window custom-html-window-lb" v-if="windowLB" v-show="showWindowLB">
@@ -121,6 +121,12 @@ const NAVBAR_HEIGHT = 58 // 导航栏高度
 
 export default {
   components: { Home, Navbar, Page, CategoriesPage, TagsPage, ArchivesPage, Sidebar, Footer, Buttons, BodyBgImg },
+
+	provide()  {
+		return {
+			themeMode: this.themeMode
+		}
+	},
 
   data () {
     return {
