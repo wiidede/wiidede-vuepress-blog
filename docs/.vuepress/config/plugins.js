@@ -113,12 +113,4 @@ module.exports = [
 			ga: 'UA-180671807-1' // UA-00000000-0
 		}
 	],
-	[
-		'cursor-effects',
-		{
-			size: 2, // size of the particle, default: 2
-			shape: 'circle', // shape of the particle, default: 'star' ['star' | 'circle']
-			zIndex: 999999999, // z-index property of the canvas, default: 999999999
-		},
-	],
 ]
