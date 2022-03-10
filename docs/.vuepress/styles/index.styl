@@ -74,16 +74,10 @@ body
   font-family "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif
 
 ::selection
-  background-color #cfcaef
+  background-color var(--select)
 
 ::-moz-selection
-  background-color #cfcaef
-
-.card-box
-  transition all ease 3s
-
-  &:hover
-    background-color var(--mainBgHover)
+  background-color var(--select)
 
 .definition-content
   cursor help
@@ -100,21 +94,9 @@ body
 .article-info
   opacity .7
 
-.iconfont
-  a
-    font-family 'PingFang SC', 'Hiragino Sans GB', 'Micorosoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif
-    font-weight 500
-
-  &.icon-touxiang, &.icon-riqi
-    cursor initial !important
-    font-family 'PingFang SC', 'Hiragino Sans GB', 'Micorosoft YaHei', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !important
-
-    &:before
-      font-family 'iconfont'
-
 .pagination
   .pagination-list > .card-box
-    transition all ease-in-out .3s
+    transition transform ease-in-out .3s
 
     &:hover
       transform translateY(-5px)

@@ -62,10 +62,11 @@
       </ul>
       <div class="info">
         <div
-          class="author iconfont icon-touxiang"
+          class="author"
           title="作者"
           v-if="articleInfo.author"
         >
+          <i class="iconfont icon-touxiang"></i>
           <a
             :href="articleInfo.author.href || articleInfo.author.link"
             v-if="
@@ -78,16 +79,17 @@
             title="作者"
             >{{ articleInfo.author.name }}</a
           >
-          <a v-else href="javascript:;">{{
+          <a v-else href="javascript:">{{
             articleInfo.author.name || articleInfo.author
           }}</a>
         </div>
         <div
-          class="date iconfont icon-riqi"
+          class="date"
           title="创建时间"
           v-if="articleInfo.date"
         >
-          <a href="javascript:;">{{ articleInfo.date }}</a>
+          <i class="iconfont icon-riqi"></i>
+          <a href="javascript:">{{ articleInfo.date }}</a>
         </div>
         <div
           class="date iconfont icon-wenjian"
@@ -210,7 +212,7 @@ export default {
         font-size 0.8rem
         @media (max-width 960px)
           margin 0 20px 0 0
-        &:before
+        i
           margin-right 3px
         a
           color #888

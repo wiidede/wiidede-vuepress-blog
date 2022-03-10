@@ -16,11 +16,12 @@
     />
     <div
       title="主题模式"
-      class="button blur theme-mode-but iconfont icon-zhuti"
+      class="button blur theme-mode-but"
       @mouseenter="showModeBox = true"
       @mouseleave="showModeBox = false"
       @click="showModeBox = true"
     >
+      <i class="iconfont icon-zhuti"/>
       <transition name="mode">
         <ul
           class="select-box"
@@ -32,11 +33,10 @@
           <li
             v-for="item in modeList"
             :key="item.KEY"
-            class="iconfont"
-            :class="[item.icon, { active: item.KEY === currentMode }]"
+            :class="{ active: item.KEY === currentMode}"
             @click="toggleMode(item.KEY)"
           >
-            {{ item.name }}
+            <i class="iconfont" :class="item.icon"/>{{ item.name }}
           </li>
         </ul>
       </transition>
@@ -236,7 +236,7 @@ export default {
       margin 0
       padding 0.8rem 0
       position absolute
-      bottom 0rem
+      bottom 0
       right 1.5rem
       background var(--mainBg)
       border 1px solid var(--borderColor)
@@ -247,6 +247,8 @@ export default {
         list-style none
         line-height 2rem
         font-size 0.95rem
+        i
+          margin-right 0.5rem
         &:hover
           color $accentColor
         &.active

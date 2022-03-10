@@ -1,11 +1,12 @@
 <template>
   <div class="pagination">
     <span
-        class="card-box prev iconfont icon-jiantou-zuo"
+        class="card-box prev"
         :class="{disabled: currentPage === 1}"
         @click="goPrex()"
     >
-      <p>上一页</p>
+      <i class="iconfont icon-jiantou-zuo"></i>
+      <span>上一页</span>
     </span>
 
     <!-- 分页在5页及以下时 -->
@@ -78,11 +79,12 @@
     </div>
 
     <span
-        class="card-box next iconfont icon-jiantou-you"
+        class="card-box next"
         :class="{disabled: currentPage === pages}"
         @click="goNext()"
     >
-      <p>下一页</p>
+      <i class="iconfont icon-jiantou-you"></i>
+      <span>下一页</span>
     </span>
   </div>
 </template>
@@ -188,7 +190,7 @@ export default {
 
     &.prev
       left 0
-      transition all ease-in-out .3s
+      transition transform ease-in-out .3s
       border-top-right-radius 5px
       border-bottom-right-radius 5px
       border-top-left-radius 32px
@@ -200,7 +202,7 @@ export default {
 
     &.next
       right 0
-      transition all ease-in-out .3s
+      transition transform ease-in-out .3s
       border-top-right-radius 32px
       border-bottom-right-radius 32px
       border-top-left-radius 5px
@@ -210,7 +212,7 @@ export default {
         transform translateX(5px)
         box-shadow rgba(0, 0, 0, 0.1) 0px 2px 12px 0px
 
-      &::before
+      i
         float right
         margin-left 0.3rem
 

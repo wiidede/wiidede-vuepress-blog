@@ -9,10 +9,10 @@
     >
       <div
         class="post card-box"
-        :class="item.frontmatter.sticky && 'iconfont icon-zhiding'"
         v-for="item in sortPosts"
         :key="item.key"
       >
+        <div v-if="item.frontmatter.sticky" class="sticky iconfont icon-zhiding"></div>
         <div class="title-wrapper">
           <h2>
             <router-link :to="item.path">{{item.title}}</router-link>
@@ -20,27 +20,26 @@
           <div class="article-info">
             <a
               title="作者"
-              class="iconfont icon-touxiang"
               target="_blank"
               v-if="item.author && item.author.href"
               :href="item.author.href"
-            >{{ item.author.name ? item.author.name : item.author }}</a>
+            ><i class="iconfont icon-touxiang"/>{{ item.author.name ? item.author.name : item.author }}</a>
             <span
               title="作者"
-              class="iconfont icon-touxiang"
               v-else-if="item.author"
-            >{{ item.author.name ? item.author.name : item.author }}</span>
+            ><i class="iconfont icon-touxiang"/>{{ item.author.name ? item.author.name : item.author }}</span>
 
             <span
               title="创建时间"
-              class="iconfont icon-riqi"
+              class=""
               v-if="item.frontmatter.date"
-            >{{ item.frontmatter.date.split(' ')[0]}}</span>
+            ><i class="iconfont icon-riqi"/>{{ item.frontmatter.date.split(' ')[0]}}</span>
             <span
               title="分类"
-              class="iconfont icon-wenjian"
+              class=""
               v-if="$themeConfig.category !== false && item.frontmatter.categories"
             >
+              <i class="iconfont icon-wenjian"/>
               <router-link
                 :to="`/categories/?category=${encodeURIComponent(c)}`"
                 v-for="(c, index) in item.frontmatter.categories"
@@ -49,9 +48,10 @@
             </span>
             <span
               title="标签"
-              class="iconfont icon-biaoqian tags"
+              class="tags"
               v-if="$themeConfig.tag !== false && item.frontmatter.tags && item.frontmatter.tags[0]"
             >
+              <i class="iconfont icon-biaoqian"/>
               <router-link
                 :to="`/tags/?tag=${encodeURIComponent(t)}`"
                 v-for="(t, index) in item.frontmatter.tags"
@@ -70,8 +70,8 @@
           ></div>
           <router-link
             :to="item.path"
-            class="readmore iconfont icon-jiantou-you"
-          >阅读全文</router-link>
+            class="readmore"
+          ><i class="iconfont icon-jiantou-you"></i>阅读全文</router-link>
         </div>
       </div>
     </transition-group>
@@ -112,7 +112,7 @@ export default {
   },
   watch: {
     currentPage () {
-      if (this.$route.query.p != this.currentPage) { // 此判断防止添加相同的路由信息（如浏览器回退时触发的）
+      if (this.$route.query.p !== this.currentPage) { // 此判断防止添加相同的路由信息（如浏览器回退时触发的）
         this.$router.push({
           query: {
             ...this.$route.query,
@@ -165,13 +165,12 @@ export default {
     position relative
     padding 1rem 1.5rem
     margin-bottom 0.9rem
-    transition all 0.3s
     &.post-leave-active
       display none
     &.post-enter
       opacity 0
       transform translateX(-20px)
-    &::before
+    .sticky
       position absolute
       top -1px
       right 0
@@ -196,14 +195,14 @@ export default {
           font-size 0.8rem
           margin-right 1rem
           cursor pointer
-          &::before
+          i
             margin-right 0.3rem
           a
             margin 0
-            &:not(:first-child)
-              &::before
+            &:not(:last-child)
+              &::after
                 content '/'
-        .tags a:not(:first-child)::before
+        .tags a:not(:last-child)::after
           content '、'
     .excerpt-wrapper
       border-top 1px solid var(--borderColor)
@@ -222,7 +221,7 @@ export default {
         float right
         margin-right 1rem
         line-height 1rem
-        &::before
+        i
           float right
           font-size 0.8rem
           margin 0.1rem 0 0 0.2rem

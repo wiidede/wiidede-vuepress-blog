@@ -2,9 +2,9 @@
   <div class="categories-wrapper card-box">
     <router-link
       to="/categories/"
-      class="title iconfont icon-wenjianjia"
+      class="title"
       title="全部分类"
-      >{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link
+      ><i class="iconfont icon-wenjianjia"/>{{ length === 'all' ? '全部分类' : '文章分类' }}</router-link
     >
 
     <div class="categories">
@@ -62,7 +62,7 @@ export default {
     opacity 0.9
     font-size 1.2rem
     padding 0 0.95rem
-    &::before
+    i
       margin-right 0.3rem
   .categories
     margin-top 0.6rem
