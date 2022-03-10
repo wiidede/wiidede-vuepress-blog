@@ -124,7 +124,7 @@ export default {
 
 	provide()  {
 		return {
-			themeMode: this.themeMode
+			themeMode: () => this.themeMode
 		}
 	},
 
@@ -264,11 +264,7 @@ export default {
     window.addEventListener('scroll', _.throttle(() => {
       if (!this.isSidebarOpen) { // 侧边栏关闭时
         p = this.getScrollTop()
-        if (t < p && p > NAVBAR_HEIGHT) { // 向下滚动
-          this.hideNavbar = true
-        } else { // 向上
-          this.hideNavbar = false
-        }
+        this.hideNavbar = t < p && p > NAVBAR_HEIGHT;
         setTimeout(() => { t = p }, 0)
       }
     }, 300))

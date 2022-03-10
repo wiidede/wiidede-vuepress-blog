@@ -34,8 +34,8 @@ export default {
 				read: null
 			},
 			opacity: 0.5,
-			intervalTime: 2,
-			transitionTime: 2,
+			intervalTime: 20,
+			transitionTime: 10,
 		}
 	},
 
@@ -53,7 +53,7 @@ export default {
 				return {
 					background: this.bgColor,
 					opacity: this.opacity,
-					transition: ['background', `${this.transitionTime}s`]
+					// transition: ['background', `${this.transitionTime}s`]
 				}
 			}
 
@@ -81,10 +81,6 @@ export default {
 		}
 	},
 
-	watch: {
-		themeMode: 'handleThemeChange'
-	},
-
 	mounted() {
 		let {bodyBgImg, bodyBgImgOpacity, bodyBgColor, intervalTime, transitionTime} = this.$themeConfig
 
@@ -93,11 +89,11 @@ export default {
 		}
 
 		if (intervalTime !== undefined) {
-			// this.intervalTime = intervalTime
+			this.intervalTime = intervalTime
 		}
 
 		if (transitionTime !== undefined) {
-			// this.transitionTime = transitionTime
+			this.transitionTime = transitionTime
 		}
 
 		if (type(bodyBgImg) === 'string') {
@@ -112,7 +108,10 @@ export default {
 			this.opacity = bodyBgImgOpacity
 		}
 
-		this.handleThemeChange(this.themeMode)
+		this.handleThemeChange(this.themeMode())
+    this.$watch(this.themeMode, function (val) {
+	    this.handleThemeChange(val)
+    })
 	},
 
 	unmounted() {
@@ -125,27 +124,35 @@ export default {
 			setBgFunc(bgList[count], bgList[(count + 1) % bgList.length])
 			clearInterval(this.timer)
 			this.timer = setInterval(() => {
-				if (++count >= bgList.length) {
+				if (count + 1 >= bgList.length) {
 					count = 0
-				}
+				} else {
+					count++
+        }
 				setBgFunc(bgList[count], bgList[(count + 1) % bgList.length], true)
 			}, this.intervalTime * 1000);
 		},
 		handleThemeChange(mode) {
 			if (this.bgImg) return
+			clearInterval(this.timer)
 			const bgColor = this.bgColorConfig[mode];
 			if (type(bgColor) === 'string') {
 				this.bgColor = bgColor;
+				this.bgColorTransition = null;
+				this.bgColorTransitionInner = null;
 			} else if (type(bgColor) === 'array') {
+				this.bgColor = null;
 				this.startRotation(bgColor, (color, next, isInterval) => {
-					isInterval && (this.bgColorTransitionActive = !this.bgColorTransitionActive)
+					if (isInterval) {
+						this.bgColorTransitionActive = !this.bgColorTransitionActive
+          } else {
+						this.bgColorTransitionInner = next
+          }
 					if (this.bgColorTransitionActive) {
 						this.bgColorTransition = color
 					} else {
 						this.bgColorTransitionInner = color
 					}
-					console.log('color1', this.bgColorTransition)
-					console.log('color2', this.bgColorTransitionInner)
 				})
 			}
 		}

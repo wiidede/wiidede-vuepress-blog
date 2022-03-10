@@ -46,7 +46,7 @@
               <h2>{{ feature.title }}</h2>
               <p>{{ feature.details }}</p>
             </router-link>
-            <a v-else href="javascript:;">
+            <a v-else href="javascript:">
               <img
                 class="feature-img"
                 v-if="feature.imgUrl"
@@ -82,7 +82,7 @@
                   <h2>{{ feature.title }}</h2>
                   <p>{{ feature.details }}</p>
                 </router-link>
-                <a v-else href="javascript:;">
+                <a v-else href="javascript:">
                   <img
                     class="feature-img"
                     v-if="feature.imgUrl"
@@ -205,21 +205,20 @@ export default {
       return htmlModules ? htmlModules.homeSidebarB : ''
     },
     showBanner () { // 当分页不在第一页时隐藏banner栏
-      return this.$route.query.p
-        && this.$route.query.p != 1
-        && (!this.homeData.postList || this.homeData.postList === 'detailed')
-        ? false : true
+      return !(this.$route.query.p
+	      && this.$route.query.p !== 1
+	      && (!this.homeData.postList || this.homeData.postList === 'detailed'))
     },
     bannerBgStyle () {
       let bannerBg = this.homeData.bannerBg
       if (!bannerBg || bannerBg === 'auto') { // 默认
-        if (this.$themeConfig.bodyBgImg) { // 当有bodyBgImg时，不显示背景
+        if (this.$themeConfig.bodyBgImg || this.$themeConfig.bodyBgColor) { // 当有bodyBgImg时，不显示背景
           return ''
         } else { // 网格纹背景
           return 'background: rgb(40,40,45) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAYAAAAe2bNZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVFhH7c6xCQAgDAVRR9A6E4hLu4uLiWJ7tSnuQcIvr2TRYsw3/zOGGEOMIcYQY4gxxBhiDDGGGEOMIcYQY4gxxBhiDLkx52W4Gn1tuslCtHJvL54AAAAASUVORK5CYII=)'
         }
       } else if (bannerBg === 'none') { // 无背景
-        if (this.$themeConfig.bodyBgImg) {
+        if (this.$themeConfig.bodyBgImg || this.$themeConfig.bodyBgColor) {
           return ''
         } else {
           return 'background: var(--mainBg);color: var(--textColor)'
@@ -243,20 +242,20 @@ export default {
     this.total = this.$sortPosts.length
   },
   beforeMount () {
-    this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
+    this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT; // vupress在打包时不能在beforeCreate(),created()访问浏览器api（如window）
   },
   mounted () {
     if (this.$route.query.p) {
       this.currentPage = Number(this.$route.query.p)
     }
 
-    if (this.hasFeatures && this.isMQMobile && (!this.$route.query.p || this.$route.query.p == 1)) {
+    if (this.hasFeatures && this.isMQMobile && (!this.$route.query.p || this.$route.query.p === 1)) {
       this.init()
     }
 
     if (this.hasFeatures) {
       window.addEventListener('resize', () => {
-        this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT ? true : false;
+        this.isMQMobile = window.innerWidth < MOBILE_DESKTOP_BREAKPOINT;
         if (this.isMQMobile && !this.slide && !this.mark) {
           this.mark++
           setTimeout(() => {
@@ -347,7 +346,7 @@ export default {
     overflow hidden
     .banner-conent
       max-width $homePageWidth
-      margin 0px auto
+      margin 0 auto
       position relative
       z-index 1
       overflow hidden
