@@ -23,15 +23,22 @@ module.exports = {
 
 	bodyBgColor: {
 		light: [
-			'linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%)',
-			'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
-			'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'
+			'linear-gradient(36deg, rgba(176,98,234,1) 0%, rgba(243,146,242,1) 40%, rgba(254,208,143,1) 70%, rgba(246,243,159,1) 100%)',
+			'linear-gradient(72deg, rgba(250,134,190,1) 0%, rgba(162,117,227,1) 40%, rgba(154,235,237,1) 70%, rgba(255,252,171,1) 100%)',
+			'linear-gradient(108deg, rgba(190,220,250,1) 0%, rgba(152,172,248,1) 40%, rgba(176,136,249,1) 70%, rgba(218,159,249,1) 100%)',
+			'linear-gradient(144deg, rgba(101,193,140,1) 0%, rgba(193,244,197,1) 40%, rgba(255,190,216,1) 70%, rgba(255,123,169,1) 100%)',
+			'linear-gradient(90deg, rgba(255,187,204,1) 0%, rgba(255,204,204,1) 40%, rgba(255,221,204,1) 70%, rgba(255,238,204,1) 100%)'
 		],
-		dark: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)',
-		read: 'linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%)'
+		dark: [
+			'linear-gradient(36deg, rgba(26,26,64,1) 0%, rgba(39,0,130,1) 40%, rgba(122,11,192,1) 70%, rgba(250,88,182,1) 100%)',
+			'linear-gradient(72deg, rgba(255,152,152,1) 0%, rgba(207,69,92,1) 40%, rgba(151,21,73,1) 70%, rgba(71,0,49,1) 100%)',
+			'linear-gradient(108deg, rgba(27,31,58,1) 0%, rgba(83,53,74,1) 40%, rgba(166,73,66,1) 70%, rgba(255,120,68,1) 100%)',
+			'linear-gradient(144deg, rgba(198,222,65,1) 0%, rgba(45,110,126,1) 40%, rgba(21,59,68,1) 70%, rgba(7,28,33,1) 100%'
+		],
+		read: 'linear-gradient(90deg, rgba(255,237,219,1) 0%, rgba(237,205,187,1) 20%, rgba(227,183,160,1) 76%, rgba(191,146,112,1) 100%)'
 	},
 	intervalTime: 30,
-	transitionTime: 10,
+	transitionTime: 20,
 	// 修改自定义背景方式
 	// bodyBgImg: [
 	// 	'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/cover.jpg'
