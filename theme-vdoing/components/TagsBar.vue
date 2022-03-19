@@ -1,96 +1,106 @@
 <template>
   <div class="tags-wrapper card-box">
     <router-link
-      to="/tags/"
-      class="title"
-      title="全部标签"
-    ><i class="iconfont icon-biaoqian1"></i>{{ length === 'all' ? '全部标签' : '热门标签' }}</router-link>
+        to="/tags/"
+        class="title"
+        title="全部标签"
+    ><i class="iconfont icon-biaoqian1"></i>{{ length === 'all' ? '全部标签' : '热门标签' }}
+    </router-link>
     <div class="tags">
       <template v-for="(item, index) in tags">
         <router-link
-          :to="`/tags/?tag=${encodeURIComponent(item.key)}`"
-          :key="index"
-          :style="tagStyleList[index]"
-          :class="{active: item.key === tag}"
-        >{{item.key}}</router-link>
-        <span :key="index+tags.length" />
+            :to="`/tags/?tag=${encodeURIComponent(item.key)}`"
+            :key="index"
+            :style="tagStyleList[index]"
+            :class="{active: item.key === tag}"
+        >{{ item.key }}
+        </router-link>
+        <span :key="index+tags.length"/>
       </template>
       <router-link
-        to="/tags/"
-        v-if="length !== 'all' && tagsData.length > length"
-      >更多...</router-link>
+          to="/tags/"
+          v-if="length !== 'all' && tagsData.length > length"
+      >更多...
+      </router-link>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: {
-    tag: {
-      type: String,
-      default: ''
-    },
-    tagsData: {
-      type: Array,
-      default: []
-    },
-    length: {
-      type: [String, Number],
-      default: 'all'
-    }
-  },
-  data () {
-    return {
-      tagBgColor: ['#11a8cd', '#F8B26A', '#67CC86', '#E15B64', '#F47E60', '#849B87'],
-      tagStyleList: []
-    }
-  },
-  created () {
-  	this.initTagStyle();
-  },
-  computed: {
-    tags () {
-      if (this.length === 'all') {
-        return this.tagsData
-      } else {
-        return this.tagsData.slice(0, this.length)
-      }
-    }
-  },
-  methods: {
-	  initTagStyle() {
-		  let tagBgColor = this.$themeConfig.tagBgColor;
-		  (!Array.isArray(tagBgColor) || !tagBgColor.length) && (tagBgColor = this.tagBgColor)
-		  this.tagStyleList = this.tags.map((tag, index) => {
-		  	index % tagBgColor.length === 0 && tagBgColor.sort(() => Math.random() - 0.5);
-			  const randomColor = tagBgColor[index % tagBgColor.length]
-			  return `background: ${randomColor};--randomColor:${randomColor};`
-		  })
-    },
-  }
+	props: {
+		tag: {
+			type: String,
+			default: ''
+		},
+		tagsData: {
+			type: Array,
+			default: []
+		},
+		length: {
+			type: [String, Number],
+			default: 'all'
+		}
+	},
+	data() {
+		return {
+			// tagBgColor: ['#11a8cd', '#F8B26A', '#67CC86', '#E15B64', '#F47E60', '#849B87'],
+			tagStyleList: []
+		}
+	},
+	created() {
+		// this.initTagStyle();
+	},
+	computed: {
+		tags() {
+			const tags = this.tagsData
+			tags.sort((a, b) => b.length - a.length)
+			if (this.length === 'all') {
+				return this.tagsData
+			} else {
+				return this.tagsData.slice(0, this.length)
+			}
+		}
+	},
+	methods: {
+		// initTagStyle() {
+		//   let tagBgColor = this.$themeConfig.tagBgColor;
+		//   (!Array.isArray(tagBgColor) || !tagBgColor.length) && (tagBgColor = this.tagBgColor)
+		//   this.tagStyleList = this.tags.map((tag, index) => {
+		//   	index % tagBgColor.length === 0 && tagBgColor.sort(() => Math.random() - 0.5);
+		// 	  const randomColor = tagBgColor[index % tagBgColor.length]
+		// 	  return `background: ${randomColor};--randomColor:${randomColor};`
+		//   })
+		// },
+	}
 }
 </script>
 
 <style lang='stylus'>
 .tags-wrapper
   padding 0 .95rem
+
   .title
     color var(--textColor)
     opacity 0.9
     font-size 1.2rem
+
     i
       margin-right 0.3rem
+
   .tags
     text-align justify
     padding 0.8rem 0.5rem 0.5rem 0.5rem
     margin 0 -0.5rem -0.5rem -0.5rem
+
     a
       opacity .9
       display inline-block
       padding 0.2rem 0.4rem
-      transition all 0.3s
-      background-color var(--textColor)
-      color var(--mainBg)
+      transition all 0.25s
+      background-color var(--mainBg)
+      color var(--textColor)
+      border 1px solid var(--textColor)
       border-radius 3px
       margin 0 0.3rem 0.5rem 0
       min-width 2rem
@@ -100,13 +110,16 @@ export default {
       text-align center
       @media (max-width $MQMobile)
         font-weight 400
+
       &:hover
         opacity 1
         transform scale(1.1)
+
       &.active
         box-shadow 0 5px 10px -5px var(--randomColor, rgba(0, 0, 0, 0.15))
         transform scale(1.22)
         opacity 1
+
         &:hover
           text-decoration none
 </style>

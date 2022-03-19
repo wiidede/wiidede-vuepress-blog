@@ -172,10 +172,10 @@ export default {
       transform translateX(-20px)
     .sticky
       position absolute
-      top -1px
+      top -1.5px
       right 0
-      font-size 2.5rem
-      color $activeColor
+      font-size 40px
+      color #80808080
       opacity 0.85
     .title-wrapper
       a

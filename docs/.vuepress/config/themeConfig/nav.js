@@ -1,6 +1,6 @@
 // nav
 module.exports = [
-  { text: '首页', link: '/' },
+  // { text: '首页', link: '/' },
   {
     text: '分类',
     items: [
@@ -11,8 +11,6 @@ module.exports = [
       { text: '其他', link: '/other/' }
     ]
   },
-  { text: '关于', link: '/about-me/' },
-  { text: '我的小站', link: 'https://wiidede.github.io/little-page/' },
   {
     text: '索引',
     link: '/archives/',
@@ -22,4 +20,11 @@ module.exports = [
       { text: '归档', link: '/archives/' },
     ],
   },
+	{
+		text: '关于',
+		items: [
+			{ text: '关于我', link: '/about-me/' },
+			{ text: '我的小站', link: 'https://wiidede.github.io/little-page/' },
+		]
+	},
 ]
