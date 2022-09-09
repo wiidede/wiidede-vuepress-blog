@@ -24,6 +24,7 @@ module.exports = [
 		text: '关于',
 		items: [
 			{ text: '关于我', link: '/about-me/' },
+			{ text: '赞赏', link: '/sponsor/' },
 			{ text: '我的小站', link: 'https://wiidede.github.io/little-page/' },
 		]
 	},
