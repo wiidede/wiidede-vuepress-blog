@@ -1,9 +1,10 @@
-<p align="center"><a href="https://wiidede.github.io/" target="_blank" rel="noopener noreferrer"><img width="180" src="https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/dede-logo.png" alt="logo"></a></p>
+<p align="center"><a href="https://wiidede.github.io/" target="_blank" rel="noopener noreferrer"><img width="180" src="https://cdn.jsdelivr.net/gh/wiidede/wiidede-vuepress-blog@master/docs/.vuepress/public/img/dede-logo.png" alt="logo"></a></p>
 
 <h1 align="center">wiidede's blog</h1>
 
-* [博客地址](https://wiidede.github.io/)
-* [旧博客](https://wiidede.github.io/wiidede-hexo-blog/)
+* [新博客(Vite)](https://wiidede.github.io)
+* [博客地址(VuePress)](https://wiidede.github.io/wiidede-vuepress-blog/)
+* [旧博客(Hexo)](https://wiidede.github.io/wiidede-hexo-blog/)
 
 ## 主题 & 快速上手
 
@@ -11,4 +12,4 @@
 
 ## 部署
 
-参考 VuePress 官方文档 [部署](https://vuepress.vuejs.org/zh/guide/deploy.html#github-pages)
+见 actions
