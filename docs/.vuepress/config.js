@@ -10,7 +10,7 @@ module.exports = {
 
   title: "Wiidede's blog",
   description: 'wiidede的个人博客，主要写写前端',
-  base: '/wiidede-vuepress-blog', // 格式：'/<仓库名>/'， 默认'/'
+  base: '/wiidede-vuepress-blog/', // 格式：'/<仓库名>/'， 默认'/'
   markdown: {
     lineNumbers: true, // 代码行号
   },

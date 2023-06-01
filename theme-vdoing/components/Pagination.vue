@@ -164,6 +164,7 @@ export default {
 
     &.ellipsis
       opacity 0.5
+      vertical-align middle
 
       &::before
         content '...'
