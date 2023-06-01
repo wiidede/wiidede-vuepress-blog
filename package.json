@@ -1,6 +1,7 @@
 {
-  "name": "theme-vdoing-blog",
+  "name": "wiiidede-vuepress-blog",
   "version": "1.0.0",
+  "packageManager": "pnpm@8.5.1",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
@@ -26,6 +27,7 @@
     "js-yaml": "^3.13.1",
     "json2yaml": "^1.1.0",
     "lodash": "^4.17.15",
+    "pnpm": "^8.6.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "vuepress": "1.8.0",
