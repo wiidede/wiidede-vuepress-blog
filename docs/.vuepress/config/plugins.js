@@ -85,7 +85,7 @@ module.exports = [
       options: {
         clientID: '81e0653b46da12f23061',
         clientSecret: '1c6529495376ece80ee86ec220f135ee0fea1d63',
-        repo: 'wiidede.github.io', // GitHub 仓库
+        repo: 'wiidede-vuepress-blog', // GitHub 仓库
         owner: 'wiidede', // GitHub仓库所有者
         admin: ['wiidede'], // 对仓库有写权限的人
         // distractionFreeMode: true,

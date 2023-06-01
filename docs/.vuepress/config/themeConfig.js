@@ -7,7 +7,7 @@ module.exports = {
 	nav,
 	sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
 	logo: '/img/dede-logo.png', // 导航栏logo
-	repo: 'wiidede/wiidede.github.io', // 导航栏右侧生成Github链接
+	repo: 'wiidede/wiidede-vuepress-blog', // 导航栏右侧生成Github链接
 	searchMaxSuggestions: 10, // 搜索结果显示最大数
 	lastUpdated: '上次更新', // 开启更新时间，并配置前缀文字   string | boolean (取值为git提交时间)
 	docsDir: 'docs', // 编辑的文件夹
@@ -41,7 +41,7 @@ module.exports = {
 	transitionTime: 20,
 	// 修改自定义背景方式
 	// bodyBgImg: [
-	// 	'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/cover.jpg'
+	// 	'https://cdn.jsdelivr.net/gh/wiidede/wiidede-vuepress-blog@master/docs/.vuepress/public/img/cover.jpg'
 	// ], // body背景大图，默认无。 单张图片 String || 多张图片 Array, 多张图片时每隔15秒换一张。
 	bodyBgImgOpacity: 1, // body背景图透明度，选值 0 ~ 1.0, 默认0.5
 
@@ -77,7 +77,7 @@ module.exports = {
 	},
 	blogger: {
 		// 博主信息，显示在首页侧边栏
-		avatar: 'https://cdn.jsdelivr.net/gh/wiidede/wiidede.github.io@master/docs/.vuepress/public/img/wiidede.png',
+		avatar: 'https://cdn.jsdelivr.net/gh/wiidede/wiidede-vuepress-blog@master/docs/.vuepress/public/img/wiidede.png',
 		name: 'Wiidede',
 		slogan: '小的的写前端',
 	},
@@ -110,7 +110,7 @@ module.exports = {
 		createYear: 2021, // 博客创建年份
 		copyrightInfo:
 			'Wiidede | <span title="all the website\'s code/theme expect for article content and logo" class="definition-content">Website</span> \
-			use <a href="https://github.com/wiidede/wiidede.github.io/blob/master/LICENSE" target="_blank">MIT License</a>\
+			use <a href="https://github.com/wiidede/wiidede-vuepress-blog/blob/master/LICENSE" target="_blank">MIT License</a>\
 			| Article content & logo use <a href="https://github.com/wiidede/wiidede-hexo-blog/blob/master/LICENSE" \
 			target="_blank">CC-BY-SA-4.0 License</a>', // 博客版权信息，支持a标签
 	},
