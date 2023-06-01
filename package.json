@@ -19,6 +19,7 @@
     "@vuepress/plugin-google-analytics": "^1.9.9",
     "@vuepress/plugin-nprogress": "^1.9.9",
     "@vuepress/plugin-search": "^1.9.9",
+    "@vue/babel-preset-app": "4.5.18",
     "chalk": "^4.1.2",
     "dayjs": "^1.11.7",
     "docsearch.js": "^2.6.3",
